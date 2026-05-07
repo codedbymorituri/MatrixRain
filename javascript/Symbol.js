@@ -12,19 +12,19 @@ class Symbol {
         this.fallSpeed = (Symbol.MIN_SPEED + Math.random() * Symbol.SPEED_RANGE) * this.baseFallSpeed;
         this.trailLength = trailLength;
         this.drop = Math.random() * -50;
-        this.prevRow = Math.floor(this.drop);
+        this.previousRow = Math.floor(this.drop);
         this.trail = [];
     }
 
-    #randChar() {
+    #randomCharacter() {
         return this.characters.charAt(Math.floor(Math.random() * this.characters.length));
     }
 
     draw(context) {
         const headRow = Math.floor(this.drop);
 
-        for (let r = this.prevRow + 1; r <= headRow; r++) {
-            this.trail.unshift({ row: r, ch: this.#randChar() });
+        for (let r = this.previousRow + 1; r <= headRow; r++) {
+            this.trail.unshift({ row: r, ch: this.#randomCharacter() });
         }
 
         if (this.trail.length > this.trailLength) {
@@ -44,9 +44,9 @@ class Symbol {
             this.drop = Math.random() * -Symbol.MAX_COLUMN_SPAWN_DELAY;
             this.fallSpeed = (Symbol.MIN_SPEED + Math.random() * Symbol.SPEED_RANGE) * this.baseFallSpeed;
             this.trail = [];
-            this.prevRow = Math.floor(this.drop);
+            this.previousRow = Math.floor(this.drop);
         } else {
-            this.prevRow = headRow;
+            this.previousRow = headRow;
             this.drop += this.fallSpeed;
         }
     }
