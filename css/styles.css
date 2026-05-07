@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    background: black;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 100;
+}
+
+.settings-panel {
+    width: 100%;
+    max-width: 720px;
+    border: 1px solid #00ff41;
+    border-bottom: none;
+    padding: 16px 24px;
+    background: #000;
+    font-family: monospace;
+    color: #00ff41;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    overflow: hidden;
+}
+
+.settings-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+    min-width: 0;
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+    min-width: 0;
+}
+
+.slider label {
+    font-size: 11px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    color: #00ff41;
+}
+
+.slider input[type="range"] {
+    flex: 1;
+    min-width: 60px;
+    accent-color: #00ff41;
+    cursor: pointer;
+}
+
+.slider span {
+  font-size: 11px;
+  flex-shrink: 0;
+  margin-left: 2px;
+}
+
+.button {
+    padding: 6px 20px;
+    background: transparent;
+    border: 1px solid #00ff41;
+    color: #00ff41;
+    font-family: monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: background 0.2s;
+}
+
+.button:hover {
+    background: #00ff4118;
+}
